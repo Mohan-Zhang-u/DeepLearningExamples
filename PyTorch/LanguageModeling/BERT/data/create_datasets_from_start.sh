@@ -13,9 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+export BERT_PREP_WORKING_DIR=/home/a207918-DataScientist/GitRepos/DeepLearningExamples/dataset
+
 #Download
-download_wikipedia --outdir ${BERT_PREP_WORKING_DIR}/wikipedia/
-python3 /workspace/bert/data/bertPrep.py --action download --dataset google_pretrained_weights  # Includes vocab
-python3 /workspace/bert/data/bertPrep.py --action download --dataset squad
-python3 /workspace/bert/data/bertPrep.py --action download --dataset mrpc
-python3 /workspace/bert/data/bertPrep.py --action download --dataset sst-2
+# download_wikipedia --outdir ${BERT_PREP_WORKING_DIR}/wikipedia/
+
+cd ./PyTorch/LanguageModeling
+python3 ./BERT/data/bertPrep.py --action download --dataset wikicorpus_en
+python3 ./BERT/data/bertPrep.py --action download --dataset bookscorpus
+python3 ./BERT/data/bertPrep.py --action text_formatting --dataset wikicorpus_en
+python3 ./BERT/data/bertPrep.py --action text_formatting --dataset bookscorpus
+python3 ./BERT/data/bertPrep.py --action sharding --dataset $DATASET
+# python3 /workspace/bert/data/bertPrep.py --action download --dataset google_pretrained_weights  # Includes vocab
+# python3 /workspace/bert/data/bertPrep.py --action download --dataset squad
+# python3 /workspace/bert/data/bertPrep.py --action download --dataset mrpc
+# python3 /workspace/bert/data/bertPrep.py --action download --dataset sst-2
