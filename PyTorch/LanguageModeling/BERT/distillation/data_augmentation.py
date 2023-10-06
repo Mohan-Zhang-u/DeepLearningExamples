@@ -27,7 +27,7 @@ import time
 import torch
 import numpy as np
 
-sys.path.append('/workspace/bert/')
+sys.path.append('./bert/')
 from tokenization import BertTokenizer
 from modeling import BertForMaskedLM
 from utils.utils import set_seed

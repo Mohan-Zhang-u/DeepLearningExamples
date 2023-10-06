@@ -14,7 +14,10 @@
 # limitations under the License.
 
 export BERT_PREP_WORKING_DIR=/home/a207918-DataScientist/GitRepos/DeepLearningExamples/dataset
+pip install tqdm boto3 requests six ipdb h5py nltk progressbar onnxruntime
 
+git clone https://github.com/attardi/wikiextractor.git && cd wikiextractor && git checkout 6408a430fc504a38b04d37ce5e7fc740191dee16 && cd ..
+git clone https://github.com/soskek/bookcorpus.git
 #Download
 # download_wikipedia --outdir ${BERT_PREP_WORKING_DIR}/wikipedia/
 
@@ -23,7 +26,11 @@ python3 ./BERT/data/bertPrep.py --action download --dataset wikicorpus_en
 python3 ./BERT/data/bertPrep.py --action download --dataset bookscorpus
 python3 ./BERT/data/bertPrep.py --action text_formatting --dataset wikicorpus_en
 python3 ./BERT/data/bertPrep.py --action text_formatting --dataset bookscorpus
-python3 ./BERT/data/bertPrep.py --action sharding --dataset $DATASET
+
+python3 ./BERT/data/bertPrep.py --action sharding --dataset wikicorpus_en
+python3 ./BERT/data/bertPrep.py --action sharding --dataset bookscorpus
+
+
 # python3 /workspace/bert/data/bertPrep.py --action download --dataset google_pretrained_weights  # Includes vocab
 # python3 /workspace/bert/data/bertPrep.py --action download --dataset squad
 # python3 /workspace/bert/data/bertPrep.py --action download --dataset mrpc

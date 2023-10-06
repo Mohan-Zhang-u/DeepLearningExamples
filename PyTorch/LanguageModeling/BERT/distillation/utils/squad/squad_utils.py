@@ -28,7 +28,7 @@ from tqdm import tqdm
 
 from tokenization import BasicTokenizer, whitespace_tokenize
 
-sys.path.append('/workspace/bert/')
+sys.path.append('./bert/')
 from utils.utils import get_rank
 
 logger = logging.getLogger(__name__)

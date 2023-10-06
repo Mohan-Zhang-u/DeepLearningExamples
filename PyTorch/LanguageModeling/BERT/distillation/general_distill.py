@@ -36,7 +36,7 @@ from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm, trange
 from torch.nn import MSELoss
 
-sys.path.append('/workspace/bert/')
+sys.path.append('./bert/')
 from modeling import BertForPreTraining, BertModel, Project, WEIGHTS_NAME, CONFIG_NAME
 from schedulers import LinearWarmUpScheduler, ConstantLR
 from tokenization_utils import BertTokenizer

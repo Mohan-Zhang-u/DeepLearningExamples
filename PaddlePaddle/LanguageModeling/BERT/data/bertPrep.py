@@ -82,7 +82,7 @@ def main(args):
 
         elif args.dataset == 'wikicorpus_en':
             if args.skip_wikiextractor == 0:
-                path_to_wikiextractor_in_container = '/workspace/wikiextractor/WikiExtractor.py'
+                path_to_wikiextractor_in_container = './wikiextractor/WikiExtractor.py'
                 wikiextractor_command = path_to_wikiextractor_in_container + ' ' + directory_structure[
                     'download'] + '/' + args.dataset + '/wikicorpus_en.xml ' + '-b 100M --processes ' + str(
                         args.n_processes) + ' -o ' + directory_structure[
@@ -102,7 +102,7 @@ def main(args):
         elif args.dataset == 'wikicorpus_zh':
             assert False, 'wikicorpus_zh not fully supported at this time. The simplified/tradition Chinese data needs to be translated and properly segmented still, and should work once this step is added.'
             if args.skip_wikiextractor == 0:
-                path_to_wikiextractor_in_container = '/workspace/wikiextractor/WikiExtractor.py'
+                path_to_wikiextractor_in_container = './wikiextractor/WikiExtractor.py'
                 wikiextractor_command = path_to_wikiextractor_in_container + ' ' + directory_structure[
                     'download'] + '/' + args.dataset + '/wikicorpus_zh.xml ' + '-b 100M --processes ' + str(
                         args.n_processes) + ' -o ' + directory_structure[
@@ -188,7 +188,7 @@ def main(args):
         def create_record_worker(filename_prefix,
                                  shard_id,
                                  output_format='tfrecord'):
-            bert_preprocessing_command = 'python /workspace/bert/create_pretraining_data.py'
+            bert_preprocessing_command = 'python ./bert/create_pretraining_data.py'
             bert_preprocessing_command += ' --input_file=' + directory_structure[
                 'sharded'] + '/' + args.dataset + '/' + filename_prefix + '_' + str(
                     shard_id) + '.txt'
@@ -241,7 +241,7 @@ def main(args):
         def create_record_worker(filename_prefix,
                                  shard_id,
                                  output_format='hdf5'):
-            bert_preprocessing_command = 'python /workspace/bert/create_pretraining_data.py'
+            bert_preprocessing_command = 'python ./bert/create_pretraining_data.py'
             bert_preprocessing_command += ' --input_file=' + directory_structure[
                 'sharded'] + '/' + args.dataset + '/' + filename_prefix + '_' + str(
                     shard_id) + '.txt'

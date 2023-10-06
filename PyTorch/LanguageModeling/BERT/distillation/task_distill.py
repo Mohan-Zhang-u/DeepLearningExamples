@@ -38,7 +38,7 @@ from torch.nn import CrossEntropyLoss, MSELoss
 from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import matthews_corrcoef, f1_score
 
-sys.path.append('/workspace/bert/')
+sys.path.append('./bert/')
 from modeling import BertForSequenceClassification, BertForQuestionAnswering, Project, WEIGHTS_NAME, CONFIG_NAME
 from schedulers import LinearWarmUpScheduler, ConstantLR
 from tokenization_utils import BertTokenizer
