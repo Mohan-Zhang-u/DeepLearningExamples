@@ -46,8 +46,8 @@ def parse_args():
     global args, seg_id
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", choices=["training", "validation"], default="validation")
-    parser.add_argument("--tf-dir", default="/workspace/data/waymo_tfrecords_val")
-    parser.add_argument("--out-dir", default="/workspace/data/waymo_coco_format_val")
+    parser.add_argument("--tf-dir", default="./data/waymo_tfrecords_val")
+    parser.add_argument("--out-dir", default="./data/waymo_coco_format_val")
     parser.add_argument("--seg-min", default=0, type=int)
     parser.add_argument("--seg-max", default=1, type=int)
     parser.add_argument("--log-file", default="waymo-converter")

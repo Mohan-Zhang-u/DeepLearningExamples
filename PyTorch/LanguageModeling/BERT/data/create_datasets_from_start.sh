@@ -16,13 +16,13 @@
 export BERT_PREP_WORKING_DIR=/home/a207918-DataScientist/GitRepos/DeepLearningExamples/dataset
 pip install tqdm boto3 requests six ipdb h5py nltk progressbar onnxruntime
 
-git clone https://github.com/attardi/wikiextractor.git && cd wikiextractor && git checkout 6408a430fc504a38b04d37ce5e7fc740191dee16 && cd ..
-git clone https://github.com/soskek/bookcorpus.git
+# git clone https://github.com/attardi/wikiextractor.git && cd wikiextractor && git checkout 6408a430fc504a38b04d37ce5e7fc740191dee16 && cd ..
+# git clone https://github.com/soskek/bookcorpus.git
 #Download
 # download_wikipedia --outdir ${BERT_PREP_WORKING_DIR}/wikipedia/
 
-cd ./PyTorch/LanguageModeling
-python3 ./BERT/data/bertPrep.py --action download --dataset wikicorpus_en
+# cd ./PyTorch/LanguageModeling
+# python3 ./BERT/data/bertPrep.py --action download --dataset wikicorpus_en
 python3 ./BERT/data/bertPrep.py --action download --dataset bookscorpus
 python3 ./BERT/data/bertPrep.py --action text_formatting --dataset wikicorpus_en
 python3 ./BERT/data/bertPrep.py --action text_formatting --dataset bookscorpus

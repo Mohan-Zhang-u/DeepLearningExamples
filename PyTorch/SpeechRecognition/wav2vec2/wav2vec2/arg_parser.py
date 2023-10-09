@@ -146,7 +146,7 @@ def populate_common(parser):
 
     task = parser.add_argument_group("task")
     task.add_argument("--data", type=str,
-                      default="/workspace/fairseq/librispeech",
+                      default="./fairseq/librispeech",
                       help="Path to data directory")
     task.add_argument("--sample_rate", type=int, default=16000,
                       help="Target sample rate. audio files will be up/down "

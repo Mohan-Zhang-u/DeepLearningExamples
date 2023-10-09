@@ -36,7 +36,7 @@ pipeline.model_export(
             --onnx-opset 13 \
             --torch-jit ${TORCH_JIT} \
             \
-            --config /workspace/gpunet/configs/batch1/GV100/0.65ms.json \
+            --config ./gpunet/configs/batch1/GV100/0.65ms.json \
             --checkpoint ${CHECKPOINT_DIR}/0.65ms.pth.tar \
             --precision ${EXPORT_PRECISION} \
             \

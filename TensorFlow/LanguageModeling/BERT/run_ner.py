@@ -15,7 +15,7 @@ import pickle
 import tensorflow as tf
 import numpy as np
 
-sys.path.append("/workspace/bert")
+sys.path.append("./bert")
 
 from biobert.conlleval import evaluate, report_notprint
 import modeling

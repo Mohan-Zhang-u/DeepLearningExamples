@@ -26,7 +26,7 @@ def main():
     parser = argparse.ArgumentParser(description="PyTorch Object Detection Inference")
     parser.add_argument(
         "--config-file",
-        default="/workspace/object_detection/configs/e2e_mask_rcnn_R_50_FPN_1x.yaml",
+        default="./object_detection/configs/e2e_mask_rcnn_R_50_FPN_1x.yaml",
         metavar="FILE",
         help="path to config file",
     )

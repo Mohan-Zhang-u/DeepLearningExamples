@@ -27,7 +27,7 @@ import numpy as np
 
 import tensorflow as tf
 
-sys.path.append("/workspace/bert")
+sys.path.append("./bert")
 
 import modeling
 import optimization

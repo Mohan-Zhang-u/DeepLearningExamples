@@ -292,7 +292,7 @@ class TritonClient:
             raise RuntimeError(
                 "Could not obtain Triton HTTP client. Install extras while installing tritonclient wheel. "
                 "Example installation call: "
-                "find /workspace/install/python/ -iname triton*manylinux*.whl -exec pip install {}[all] \\;"
+                "find ./install/python/ -iname triton*manylinux*.whl -exec pip install {}[all] \\;"
             )
 
         LOGGER.debug(f"Connecting to {server_url}")

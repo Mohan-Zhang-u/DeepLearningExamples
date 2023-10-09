@@ -137,7 +137,7 @@ class TabFormerPreprocessing(BasePreprocessing):
 
     def download(self):
         raise NotImplementedError(
-            "TabFormer dataset does not support automatic downloading. Please run /workspace/scripts/get_datasets.sh"
+            "TabFormer dataset does not support automatic downloading. Please run ./scripts/get_datasets.sh"
         )
 
     def _check_files(self) -> bool:

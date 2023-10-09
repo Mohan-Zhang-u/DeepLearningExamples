@@ -169,5 +169,5 @@ if __name__ == "__main__":
 #### USAGE ####
 #
 # NUM_PROC=8
-# python -m torch.distributed.launch --nproc_per_node=$NUM_PROC data/dataloader_test.py /workspace/object_detection/datasets/coco -b 64 --workers 16
+# python -m torch.distributed.launch --nproc_per_node=$NUM_PROC data/dataloader_test.py ./object_detection/datasets/coco -b 64 --workers 16
 #

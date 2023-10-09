@@ -76,7 +76,7 @@ def main(args):
 
         elif args.dataset == 'wikicorpus_en':
             if args.skip_wikiextractor == 0:
-                path_to_wikiextractor_in_container = '/workspace/wikiextractor/WikiExtractor.py'
+                path_to_wikiextractor_in_container = './wikiextractor/WikiExtractor.py'
                 wikiextractor_command = path_to_wikiextractor_in_container + ' ' + directory_structure['download'] + '/' + args.dataset + '/wikicorpus_en.xml ' + '-b 100M --processes ' + str(args.n_processes) + ' -o ' + directory_structure['extracted'] + '/' + args.dataset
                 print('WikiExtractor Command:', wikiextractor_command)
                 wikiextractor_process = subprocess.run(wikiextractor_command, shell=True, check=True)
@@ -92,7 +92,7 @@ def main(args):
                 'wikicorpus_zh not fully supported at this time. The simplified/tradition Chinese data needs to be '
                 'translated and properly segmented still, and should work once this step is added.')
             # if args.skip_wikiextractor == 0:
-            #     path_to_wikiextractor_in_container = '/workspace/wikiextractor/WikiExtractor.py'
+            #     path_to_wikiextractor_in_container = './wikiextractor/WikiExtractor.py'
             #     wikiextractor_command = path_to_wikiextractor_in_container + ' ' + directory_structure['download'] + '/' + args.dataset + '/wikicorpus_zh.xml ' + '-b 100M --processes ' + str(args.n_processes) + ' -o ' + directory_structure['extracted'] + '/' + args.dataset
             #     print('WikiExtractor Command:', wikiextractor_command)
             #     wikiextractor_process = subprocess.run(wikiextractor_command, shell=True, check=True)
@@ -157,7 +157,7 @@ def main(args):
             args.vocab_file = os.path.join(working_dir, "vocab.txt")
 
         for _dir in ['train', 'test']:
-            electra_preprocessing_command = 'python /workspace/electra/build_pretraining_dataset.py'
+            electra_preprocessing_command = 'python ./electra/build_pretraining_dataset.py'
             electra_preprocessing_command += ' --corpus-dir=' + directory_structure['sharded'] + '/' + args.dataset + '/' + _dir
             electra_preprocessing_command += ' --output-dir=' + directory_structure['tfrecord'] + '/' + args.dataset + '/' + _dir
             electra_preprocessing_command += ' --vocab-file=' + args.vocab_file

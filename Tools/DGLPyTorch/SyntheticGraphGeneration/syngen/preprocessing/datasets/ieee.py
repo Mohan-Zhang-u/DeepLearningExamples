@@ -120,7 +120,7 @@ class IEEEPreprocessing(BasePreprocessing):
 
     def download(self):
         raise NotImplementedError(
-            "IEEE dataset does not support automatic downloading. Please run /workspace/scripts/get_datasets.sh"
+            "IEEE dataset does not support automatic downloading. Please run ./scripts/get_datasets.sh"
         )
 
     def _check_files(self) -> bool:

@@ -23,7 +23,7 @@ from typing import Sequence
 
 # Workaround to avoid duplicating code from the main module, without building it outright.
 import sys
-sys.path.append('/workspace/dlrm')
+sys.path.append('./dlrm')
 from feature_spec import FeatureSpec, get_categorical_feature_type
 
 
